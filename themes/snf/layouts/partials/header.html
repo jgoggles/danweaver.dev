@@ -1,0 +1,16 @@
+<header>
+	<div id="header">
+		<a href="{{ .Site.BaseURL }}">
+			{{.Site.Title}}
+		</a>
+	</div>
+	<div style="float: right;">
+		<nav>
+			{{ with .Site.Menus.main }}
+				{{ range . }}
+					<a href="{{ .URL | relURL }}"><b>{{ .Name }}</b></a>
+				{{ end }}
+			{{ end }}
+		</nav>
+	</div>
+</header>

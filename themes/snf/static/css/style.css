@@ -1,0 +1,77 @@
+html {
+  overflow-y: scroll;
+}
+body {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 10px;
+  font: 16px/1.6 monospace;
+  color: #444;
+}
+h1,
+h2,
+h3 {
+  font-family: "Fjalla One", sans-serif;
+  line-height: 1.2;
+}
+
+h1 { text-transform: uppercase; }
+#header {
+  font-size: 35px;
+  font-family: "Fjalla One", sans-serif;
+  font-weight: bolder;
+  letter-spacing: 0.05em;
+  margin: 0;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  border-bottom: 1px solid #E8E8E8;
+  letter-spacing: .1em;
+}
+
+@media (min-width: 768px) {
+  #header {
+    font-size: 5em;
+  }
+}
+a, a:visited {
+  color: #34495E; 
+  /* https://www.colorhexa.com/34495e */
+}
+a:hover { 
+  color: #19232d;
+}
+article a, aside a { text-decoration: underline; }
+h1 a, #header a { text-decoration: none; }
+main { clear: both; }
+.main-title {
+  margin: 0;
+}
+.summary {
+  padding: 6px;
+}
+code {
+  color: #000000;
+  background: #f4f4f4;
+  font-weight: bold;
+  padding: 2px;
+}
+pre {
+  color: #ffffff;
+  background: #000000;
+  padding: 24px;
+  white-space: pre-wrap;
+}
+
+pre code {
+  background: #272822;
+  color: #ffffff;
+}
+article {
+  padding: 20px 0;
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}

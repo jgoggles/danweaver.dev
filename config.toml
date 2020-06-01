@@ -1,0 +1,23 @@
+baseURL = "https://danweaver.dev"
+languageCode = "en-us"
+title = "danweaver.dev"
+theme = "snf"
+
+# Header
+[menu]
+  [[menu.main]]
+        identifier = "about"
+        name = "About"
+        url = "/about/"
+        weight = 1
+
+# Footer
+[[menu.footer]]
+        name = "Github"
+        url = "https://github.com/example"
+        weight = 1 
+[[menu.footer]]
+      identifier = "tags"
+      name = "Tags"
+      url = "/tags/"
+      weight = 2

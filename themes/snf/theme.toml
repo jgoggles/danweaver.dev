@@ -1,0 +1,12 @@
+name = "snf"
+license = "MIT"
+description = "Minimal Hugo theme"
+
+[author]
+  name = "jgoggles"
+  homepage = "danweaver.dev"
+
+[original]
+  author = "morph"
+  homepage = "morph.sh
+  repo = "https://github.com/colorchestra/smol"
