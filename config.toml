@@ -14,7 +14,7 @@ theme = "snf"
 # Footer
 [[menu.footer]]
         name = "Github"
-        url = "https://github.com/example"
+        url = "https://github.com/jgoggles"
         weight = 1 
 [[menu.footer]]
       identifier = "tags"

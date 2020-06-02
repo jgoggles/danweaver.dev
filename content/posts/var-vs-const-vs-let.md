@@ -1,5 +1,5 @@
 ---
-title: "Var vs Const vs Let"
+title: "The Differences Between var, const, and let"
 date: 2020-05-31T11:09:15-06:00
 tags: [ "javascript"]
 ---
