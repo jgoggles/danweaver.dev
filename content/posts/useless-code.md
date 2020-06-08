@@ -28,7 +28,7 @@ there[^1]. That's about as formal as it gets a lot of times.
 The scope of our requirements definitely vary. The prison example is pretty
 broad, like project-level broad. Most of the time the scale of our requirements
 are at the method[^2] level, or at least that's the unit we work with most often. I
-need to take an array of Users and return a list of first names sorted
+need to take an array of user objects and return a list of first names sorted
 alphabetically -- that kind of thing. It's pretty specific. It's also not a hard
 problem to solve. Your room to get creative is limited unless you want to write
 a bunch of code nobody understands. Other people understanding our code is a
