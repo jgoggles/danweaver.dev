@@ -1,6 +1,6 @@
 baseURL = "https://www.danweaver.dev"
 languageCode = "en-us"
-title = "danweaver.de"
+title = "danweaver.dev"
 theme = "snf"
 
 # Header
