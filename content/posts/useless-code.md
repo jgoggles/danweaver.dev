@@ -1,5 +1,5 @@
 ---
-title: "Useless Code"
+title: "Write Useless Code"
 date: 2020-06-07
 tags: [ "culture"]
 ---
