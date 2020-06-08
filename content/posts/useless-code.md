@@ -85,5 +85,5 @@ different sounding voices. Remember that creativity is distinct from technical
 know-how. Remember that this is so much freaking fun. Remember that you can type
 anything you want.
 
-[^1]: This a convenient metaphor for an otherwise broken system. https://www.prisonpolicy.org/reports/pie2020.html
+[^1]: This a convenient metaphor for an otherwise [broken system](https://www.prisonpolicy.org/reports/pie2020.html).
 [^2]: Or function or routine or whatever you want to call it.
