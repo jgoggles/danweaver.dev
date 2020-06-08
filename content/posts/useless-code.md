@@ -35,7 +35,7 @@ a bunch of code nobody understands. Other people understanding our code is a
 universal constraint placed upon us as software engineers. Like other creatives,
 our work must encapsulate our message, our intent. But unlike other creatives we
 can't obscure our intent for the sake of being coy or to jog interpretation. However, when we're
-designing how these small, easy, implementations come together to fulfill our broad requirements
+designing how these simple atomic implementations come together to fulfill our broad requirements
 there isn't always a clear path forward. We must get creative.
 
 Most of us probably got into this profession because we like building things,
