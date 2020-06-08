@@ -1,7 +1,8 @@
 <footer>
-	<p>&copy; {{ now.Year }} <b>Dan Weaver</b>
-	{{- range .Site.Menus.footer }}
-	<a href="{{ .URL }}"><b>{{ .Name }}</b></a>
-        {{- end }}
-	</p>
+  <p>
+    &copy; {{ now.Year }} <b>Dan Weaver</b> /
+    {{- range .Site.Menus.footer }}
+			<a href="{{ .URL }}"><b>{{ .Name }}</b></a>
+    {{- end }}
+  </p>
 </footer>

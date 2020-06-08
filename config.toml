@@ -1,6 +1,6 @@
 baseURL = "https://www.danweaver.dev"
 languageCode = "en-us"
-title = "danweaver.dev"
+title = "danweaver.dev️"
 theme = "snf"
 
 # Header
@@ -16,8 +16,3 @@ theme = "snf"
         name = "Github"
         url = "https://github.com/jgoggles"
         weight = 1 
-[[menu.footer]]
-      identifier = "tags"
-      name = "Tags"
-      url = "/tags/"
-      weight = 2
