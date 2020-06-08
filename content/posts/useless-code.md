@@ -23,11 +23,11 @@ and formality and boundries and deteminism. Blueprints to be followed. That
 might be closer to the truth for engineers who create physical things, but we
 engineer abstractions, our blueprints are less formal. Create something that
 keeps prisoners in generally the same spot for as long as we need them to be
-there[^1]. That's about as formal as it gets a lot of times.
+there. That's about as formal as it gets a lot of times.
 
 The scope of our requirements definitely vary. The prison example is pretty
 broad, like project-level broad. Most of the time the scale of our requirements
-are at the method[^2] level, or at least that's the unit we work with most often. I
+are at the method level, or at least that's the unit we work with most often. I
 need to take an array of user objects and return a list of first names sorted
 alphabetically -- that kind of thing. It's pretty specific. It's also not a hard
 problem to solve. Your room to get creative is limited unless you want to write
@@ -84,6 +84,3 @@ telling and teaching. Remember it's possible to communicate clearly with
 different sounding voices. Remember that creativity is distinct from technical
 know-how. Remember that this is so much freaking fun. Remember that you can type
 anything you want.
-
-[^1]: This a convenient metaphor for an otherwise [broken system](https://www.prisonpolicy.org/reports/pie2020.html).
-[^2]: Or function or routine or whatever you want to call it.
