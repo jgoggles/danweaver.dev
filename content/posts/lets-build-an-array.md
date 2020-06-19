@@ -1,7 +1,6 @@
 ---
-title: "Lisp-style lists in Ruby: a fun if not pointless exercise"
-date: 2020-06-19
-tags: ["ruby"]
+title: "Lisp-style lists in Ruby: a fun if not pointless exercise" date:
+2020-06-19 tags: ["ruby"]
 ---
 
 Ruby's arrays are super easy to work with. You just put some stuff between a `[`
@@ -9,14 +8,16 @@ and a `]` separated by `,`s and boom you have an array. You can easily do fun
 things with your array, iterating like crazy, the world is your oyster. We've
 got `each`, `map`, `inject`, `select`, `reject`. All sorts of stuff. Most
 languages are like this. It's all easy and very handy and well documented. Which
-is why it would be totally pointless to build our own version of `Array` in Ruby.
+is why it would be totally pointless to build our own version of `Array` in
+Ruby.
 
 ## Let's Build Lists Instead
 
-I really like [Lisp-style lists](http://www.gigamonkeys.com/book/they-called-it-lisp-for-a-reason-list-processing.html). Elixir uses them. Probably some other languages
-that I haven't used use them too. A **list** is similar to an array in that it's a
-container for objects that you can iterate over. Lists have some unique
-properties though:
+I really like [Lisp-style
+lists](http://www.gigamonkeys.com/book/they-called-it-lisp-for-a-reason-list-processing.html).
+Elixir uses them. Probably some other languages that I haven't used use them
+too. A **list** is similar to an array in that it's a container for objects that
+you can iterate over. Lists have some unique properties though:
 
 1) Lists always consist of two elements: a **head** and a **tail**
 2) The head of a list can be anything (including other lists)
@@ -61,7 +62,7 @@ end
 ```
 
 We'll give instances of `Hooray` two attributes: `head` and `tail`. That's the
-easy part, the intitialization needs a bit of explaining. First, we check if
+easy part, the initialization needs a bit of explaining. First, we check if
 there are any `args` if not we'll just set our `head` and `tail` to `nil`. If
 there are `args` we do this:
 
@@ -70,9 +71,9 @@ there are `args` we do this:
 ```
 
 This will set `head` to the first `arg` and `tail` as an array containing all
-the rest. (Isn't using `Array` stuff cheating? Nope! 😉).
-After that it does get a bit tricky but hopefully things will clear up as you
-keep reading. I'll explain it anyway. First the `if`:
+the rest. (Isn't using `Array` stuff cheating? Nope! 😉). After that it does get
+a bit tricky but hopefully things will clear up as you keep reading. I'll
+explain it anyway. First the `if`:
 
 ```ruby
 @tail = 
@@ -80,11 +81,11 @@ keep reading. I'll explain it anyway. First the `if`:
     tail.first
 ```
 
-If the tail is already an instance of `Hooray` we'll just use that as the `tail` as
-is. In theory you could do something like `Hooray.new(1, Hooray.new(2), 3)` and that would end up dropping the `3`, but that's ok
-because rule #1 of lists is that they only contain two elements. And rule #3
-says the second element (our `tail`) is always another list. Moving on to the
-`else`:
+If the tail is already an instance of `Hooray` we'll just use that as the `tail`
+as is. In theory you could do something like `Hooray.new(1, Hooray.new(2), 3)`
+and that would end up dropping the `3`, but that's ok because rule #1 of lists
+is that they only contain two elements. And rule #3 says the second element (our
+`tail`) is always another list. Moving on to the `else`:
 
 ```ruby
 else
@@ -94,7 +95,8 @@ end
 
 This says if there is anything in the tail, pass them all as arguments to a new
 `Hooray` otherwise create a new `Hooray` with no args. This line is responsible
-for creating nested `Hoorays` eventually ending in a `nil`, satisfiying our rules.
+for creating nested `Hoorays` eventually ending in a `nil`, satisfying our
+rules.
 
 Now we can fire up `irb`, load our class, and build these things:
 
@@ -115,9 +117,8 @@ we need to address out of the gates.
 
 ### First Issue
 
-You may be wondering why our instances of `Hooray` with no args set
-`head` and `tail` to `nil` rather than their own `Hooray`s.
-Two answers there:
+You may be wondering why our instances of `Hooray` with no args set `head` and
+`tail` to `nil` rather than their own `Hooray`s. Two answers there:
 1) That would cause an infinite regress of `Hooray`s (which is always
    interesting and funny but not super practical)
 2) Keep reading!
@@ -129,11 +130,7 @@ entirely true, but it's an easy fix.
 
 ```ruby
 class Hooray
-  attr_accessor :head, :tail
-
-  def initialize(*args)
-    # Stuff we've already written
-  end
+  # Stuff we've already written
 
   def nil?
     head.nil? && tail.nil?
@@ -145,9 +142,8 @@ We're defining our own `nil?` method and all it does is check to see if both the
 `head` and `tail` are themselves `nil`, if so the `Hooray` itself is `nil`. This
 is also our first peek into the simple power of this data structure: since
 `tail`s are always lists (in our case instances of `Hooray`) the call to `nil?`
-is a call to the method we just wrote. It's recursive. It also handles our
-no arg instances of `Hooray` which actually do use `nil` as values.
-Let's look:
+is a call to the method we just wrote. It's recursive. It also handles our no
+arg instances of `Hooray` which actually do use `nil` as values. Let's look:
 
 ```ruby
 >> Hooray.new.nil?
@@ -190,10 +186,10 @@ end
 
 Much better! Very Lispy!
 
-We should also make these things a little easier to construct.
-Using `Hooray.new` isn't terrible, but it doesn't feel like you're constructing
-a built-in data type. To fix that we can add a method on
-`Object` like so. Just throw it in at the bottom of your `hooray.rb`.
+We should also make these things a little easier to construct. Using
+`Hooray.new` isn't terrible, but it doesn't feel like you're constructing a
+built-in data type. To fix that we can add a method on `Object` like so. Just
+throw it in at the bottom of your `hooray.rb`.
 
 ```ruby
 class Hooray
@@ -221,8 +217,8 @@ with our lists.
 ## Doing Some Actual Things With Our Lists
 
 ### `#length`
-Let's start with something basic, list length. How long is a list? We
-don't know, but we teach it how to tell us:
+Let's start with something basic, list length. How long is a list? We don't
+know, but we teach it how to tell us:
 
 ```ruby
 def length
@@ -236,11 +232,11 @@ end
 ```
 
 The key here is the operation on `tail`. Since we know that `tail` is always
-itself a instance of `Hooray` (rule #3), the call on `tail` is itself the `Hooray` instance method
-`length`. This is recursive, making its way all the way through each `head` of
-every list. This will be a recurring theme (dad joke) throughout most of our
-methods. Even though this isn't a post about recursion it really kind of is so
-let's break down what's happening real quick:
+itself a instance of `Hooray` (rule #3), the call on `tail` is itself the
+`Hooray` instance method `length`. This is recursive, making its way all the way
+through each `head` of every list. This will be a recurring theme (dad joke)
+throughout most of our methods. Even though this isn't a post about recursion it
+really kind of is so let's break down what's happening real quick:
 
 ```ruby
 # We'll use the literal notation without the constructor for simplicity
@@ -254,7 +250,8 @@ let's break down what's happening real quick:
 ```
 
 ### `#==`
-We'll say two lists are equal if all the elements have the same values, in the same order:
+We'll say two lists are equal if all the elements have the same values, in the
+same order:
 
 ```ruby
 def ==(hooray)
@@ -340,9 +337,9 @@ Hi there, 2
 Hi there, 3
 ```
 
-Pretty neat right? Thanks to Ruby's closures we can basically get 
-it to act like a functional language and pass around a block of code (`&block`) to be executed on each
-head (`yield head`). That's it. Easy.
+Pretty neat right? Thanks to Ruby's closures we can basically get it to act like
+a functional language and pass around a block of code (`&block`) to be executed
+on each head (`yield head`). That's it. Easy.
 
 With that pattern in place it's a short putt to some other basic enumerable
 methods.
@@ -378,8 +375,8 @@ end
 ```
 
 Each time through the method will create a new value to pass to the recursive
-call to the current `tail` by `yield`ing to the previous value and the current
-head. Reducers can make your head spin a bit (at least they do for me), so let's
+call to the current `tail` by `yield`ing to the previous `value` and the current
+`head`. Reducers can make your head spin a bit (at least they do for me), so let's
 step through it:
 
 ```ruby
@@ -412,10 +409,10 @@ The main take away here is that these methods can be composable, meaning you can
 combine them in different ways to produce new encapsulations.
 
 ## Some Things We Didn't Cover
-There are a few imporant and interesting topics that come up when we start
-discussing and comparing data stuctures which we didn't cover because they're
+There are a few important and interesting topics that come up when we start
+discussing and comparing data structures which we didn't cover because they're
 beyond the scope of this post. Each of these could be their own post and are
-definetly worth exploring on your own if you're curious.
+definitely worth exploring on your own if you're curious.
 
 ### Binary Trees
 Our `Hooray` lists are really nice for creating [binary
@@ -423,13 +420,14 @@ trees](https://en.wikipedia.org/wiki/Binary_tree#:~:text=In%20computer%20science
 Simply alias `head` to `left` and `tail` to `right` and you got yourself a stew!
 
 ### Time Complexity
-There are [time complexity](https://www.bigocheatsheet.com/) considerations for any type of data structure, especially
-when it comes to accessing, searching, inserting, and deleting elements. Some
-are faster for certain operations than others.
+There are [time complexity](https://www.bigocheatsheet.com/) considerations for
+any type of data structure, especially when it comes to accessing, searching,
+inserting, and deleting elements. Some are faster for certain operations than
+others.
 
 ### Runtime
-I did't show you any benchmarking, but belive me when I say that our `Hooray`s run
-much slower than `Array`s. Is there a way to close that gap?
+I did't show you any benchmarking, but believe me when I say that our `Hooray`s
+run much slower than `Array`s. Is there a way to close that gap?
 
 ## Wrapping Up, Finally
 That might've seemed like a lot to go through for something that isn't really
@@ -437,9 +435,11 @@ practical. But there are a few important takeaways from going through an
 exercise like this:
 
 1) You learn some things about Ruby
-2) You learn some things about functional programming (go check out [Elixir](https://elixir-lang.org/)!)
+2) You learn some things about functional programming (go check out
+   [Elixir](https://elixir-lang.org/)!)
 3) Maybe I sparked your interest in Lisp, a classic and interesting language
-   that served as inspiration for Ruby (go learn [Lisp](http://www.gigamonkeys.com/book/)!) 
+   that served as inspiration for Ruby (go learn
+   [Lisp](http://www.gigamonkeys.com/book/)!) 
 5) It was fun!
 
 The entire source for `Hooray` can be found
