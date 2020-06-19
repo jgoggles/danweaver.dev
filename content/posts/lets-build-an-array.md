@@ -1,6 +1,7 @@
 ---
-title: "Lisp-style lists in Ruby: a fun if not pointless exercise" date:
-2020-06-19 tags: ["ruby"]
+title: "Lisp-style lists in Ruby: a fun if not pointless exercise"
+date: 2020-06-19
+tags: ["ruby"]
 ---
 
 Ruby's arrays are super easy to work with. You just put some stuff between a `[`
