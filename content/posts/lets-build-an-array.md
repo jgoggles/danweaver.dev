@@ -172,8 +172,6 @@ class Hooray
   # Stuff we've already written
 
   def inspect
-    return nil.inspect if nil?
-
     head_i = "(#{head.inspect}"
     tail_i = tail.nil? ? ")" : tail.inspect.gsub("(", " ")
 
@@ -233,7 +231,7 @@ end
 ```
 
 The key here is the operation on `tail`. Since we know that `tail` is always
-itself a instance of `Hooray` (rule #3), the call on `tail` is itself the
+itself an instance of `Hooray` (rule #3), the call on `tail` is itself the
 `Hooray` instance method `length`. This is recursive, making its way all the way
 through each `head` of every list. This will be a recurring theme (dad joke)
 throughout most of our methods. Even though this isn't a post about recursion it
@@ -439,7 +437,7 @@ exercise like this:
 2) You learn some things about functional programming (go check out
    [Elixir](https://elixir-lang.org/)!)
 3) Maybe I sparked your interest in Lisp, a classic and interesting language
-   that served as inspiration for Ruby (go learn
+   that served as an inspiration for Ruby (go learn
    [Lisp](http://www.gigamonkeys.com/book/)!) 
 5) It was fun!
 
